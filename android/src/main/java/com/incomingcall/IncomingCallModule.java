@@ -57,6 +57,15 @@ public class IncomingCallModule extends ReactContextBaseJavaModule {
         }
     }
 
+    @ReactMethod
+    public void dismiss() {
+
+        if (UnlockScreenActivity.active) {
+           UnlockScreenActivity.getInstance().dismissIncoming();
+        }
+        return;
+    }
+    
     private Context getAppContext() {
         return this.reactContext.getApplicationContext();
     }
